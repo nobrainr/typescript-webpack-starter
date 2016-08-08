@@ -27,4 +27,4 @@ Bundled files are releases into `dist` folder
 
 - [-] Add samples (Jquery integration for example..)
 - [-] Setup a webpack-dev-server
-- [-] Setup VSCode debuug to match webpack-dev-server
+- [-] Setup VSCode debug to match webpack-dev-server
