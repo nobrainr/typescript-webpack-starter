@@ -1,5 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 var config = {
 
@@ -33,8 +35,9 @@ var config = {
             { test: /\.ts$/, exclude: ["node_modules"], loader: 'ts-loader' },
             { test: /\.html$/, loader: "html" },
             { test: /\.css$/, loader: "style-loader!css-loader" }
-        ]
-    }
+        ]        
+    },
+    plugins: [new HtmlWebpackPlugin()]
 };
 
 module.exports = config;
