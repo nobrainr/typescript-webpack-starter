@@ -38,7 +38,8 @@ var config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Typescript Webpack Starter'
+            title: 'Typescript Webpack Starter',
+            template: '!!ejs-loader!src/index.html'
         })
     ]
 };
