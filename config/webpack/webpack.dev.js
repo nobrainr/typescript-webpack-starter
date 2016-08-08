@@ -1,5 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
 
@@ -34,7 +35,13 @@ var config = {
             { test: /\.html$/, loader: "html" },
             { test: /\.css$/, loader: "style-loader!css-loader" }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Typescript Webpack Starter',
+            template: '!!ejs-loader!src/index.html'
+        })
+    ]
 };
 
 module.exports = config;

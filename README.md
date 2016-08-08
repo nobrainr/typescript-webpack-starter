@@ -1,6 +1,14 @@
 # Typescript Webpack Starter
+>A damn simple ES6 and Typescript Starter kit using webpack for packaging. Perfect for bootstraping your javascript project regardless any framework.
 
-A damn simple starter kit to bootstrap a Typescript/ES6
+# Getting started
+
+## Clone Typescript Webpack Starter
+```bash
+git clone https://github.com/emyann/typescript-webpack-starter.git
+cd typescript-webpack-starter
+```
+
 ## Build
 Build a development release
 ```bash
@@ -13,19 +21,10 @@ Build a production release
 npm install
 npm run build:prod
 ```
-Bundled files are outputed to `dist` folder
-
-## Debug 
-
-### Issues whith Chrome Debugger
-Sometimes Chrome debugger is not correctly initialized, as a consequence for VSCode to receive an access denied from Chrome on port 9222. 
-
-The workaround is to close all Chrome instances and run it manually enabling debugging port
-```bat
-"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
-```
+Bundled files are releases into `dist` folder
 
 ## TODO
 
-- [-] Add samples (Jquery integration)
-- [-] Add Webpack HTML Plugin to generate an index.html
+- [-] Add samples (Jquery integration for example..)
+- [-] Setup a webpack-dev-server
+- [-] Setup VSCode debuug to match webpack-dev-server

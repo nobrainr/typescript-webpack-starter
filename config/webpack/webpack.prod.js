@@ -1,5 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
 
@@ -37,6 +38,7 @@ var config = {
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
+        new HtmlWebpackPlugin({title: 'Typescript Webpack Starter'})
     ]
 };
 
