@@ -1,0 +1,8 @@
+# Build results
+dist/
+typings/**/*
+
+# Others
+~$*
+*~
+node_modules/

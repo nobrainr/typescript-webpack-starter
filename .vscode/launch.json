@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach with sourcemaps",
+            "type": "chrome",
+            "request": "attach",
+            "sourceMaps": true,
+            "port": 9222,
+            "diagnosticLogging": true,
+            "webRoot": "${workspaceRoot}/dist"
+        }
+    ]
+}
