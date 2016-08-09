@@ -1,30 +1,21 @@
-var path = require("path");
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
-
+    devtool: 'cheap-eval-source-map',
+    context: path.resolve('./src'),
     entry: {
-        'vendor': './src/vendor.ts',
-        'app': './src/index.ts'
+        app: './index.ts',
+        vendor: './vendor.ts'
     },
-    debug: true,
-    devtool: 'source-map',
     output: {
-        path: path.resolve("dist"),
+        path: path.resolve('./dist'),
         filename: '[name].bundle.js',
         sourceMapFilename: '[name].map',
         devtoolModuleFilenameTemplate: function (info) {
             return "file:///" + info.absoluteResourcePath;
         }
-    },
-    tslint: {
-        emitErrors: false,
-        failOnHint: false,
-        resourcePath: 'src'
-    },
-    resolve: {
-        extensions: ["", ".ts", ".js"]
     },
     module: {
         preLoaders: [
@@ -33,15 +24,33 @@ var config = {
         loaders: [
             { test: /\.ts$/, exclude: ["node_modules"], loader: 'ts-loader' },
             { test: /\.html$/, loader: "html" },
-            { test: /\.css$/, loader: "style-loader!css-loader" }
+            { test: /\.css$/, loaders: ['style', 'css'] }
         ]
+    },
+    resolve: {
+        extensions: ["", ".ts", ".js"],
+        modules: [path.resolve('./src'), 'node_modules']
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Typescript Webpack Starter',
             template: '!!ejs-loader!src/index.html'
-        })
-    ]
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity,
+            filename: 'vendor.bundle.js'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {warnings: false},
+            output: {comments: false},
+            sourceMap: false
+        }),
+    ],
+    tslint: {
+        emitErrors: false,
+        failOnHint: false
+    },
 };
 
 module.exports = config;

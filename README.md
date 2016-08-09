@@ -1,6 +1,11 @@
 # Typescript Webpack Starter
 >A damn simple ES6 and Typescript Starter kit using webpack for packaging. Perfect for bootstraping your javascript project regardless any framework.
 
+## Built upon
+
+- [x] [Webpack 2](https://webpack.github.io/docs/roadmap.html#2)
+- [x] [Typescript 2](https://blogs.msdn.microsoft.com/typescript/2016/07/11/announcing-typescript-2-0-beta/)
+
 # Getting started
 
 ## Clone Typescript Webpack Starter
