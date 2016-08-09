@@ -3,3 +3,5 @@ export default class Main {
         console.log('Typescript Webpack starter launched');
     }
 }
+
+let start = new Main();
