@@ -28,11 +28,12 @@ npm run build:prod
 ```
 After build phase, those files are generated into the `dist` folder:
 - `app.bundle.js` - contains the core of the application. From the entry point `src/index.ts`
-- `vendor.bundle.js` - contains the ve
+- `vendor.bundle.js` - contains the vendor dependencies
 
 ## TODO
 
 - [-] Add samples (Jquery integration for example..)
 - [-] Setup a webpack-dev-server
-- [-] Setup VSCode debuug to match webpack-dev-server
+- [-] Setup VSCode debug to match webpack-dev-server
 - [-] Setup a webpack common configuration and use webpack-merge
+- [-] Setup for tests
