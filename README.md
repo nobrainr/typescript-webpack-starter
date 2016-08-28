@@ -14,7 +14,14 @@ git clone https://github.com/emyann/typescript-webpack-starter.git
 cd typescript-webpack-starter
 ```
 
-## Build
+## Run
+Run a Webpack dev server 
+```bash
+npm install
+npm run server
+```
+
+## Build Only
 Build a development release
 ```bash
 npm install
@@ -26,14 +33,14 @@ Build a production release
 npm install
 npm run build:prod
 ```
-After build phase, those files are generated into the `dist` folder:
+After build phase, 3 files are generated into the `dist` folder:
 - `app.bundle.js` - contains the core of the application. From the entry point `src/index.ts`
 - `vendor.bundle.js` - contains the vendor dependencies
+- `index.html` - html page with references to the 2 files above
 
 ## TODO
 
-- [-] Add samples (Jquery integration for example..)
-- [-] Setup a webpack-dev-server
-- [-] Setup VSCode debug to match webpack-dev-server
-- [-] Setup a webpack common configuration and use webpack-merge
-- [-] Setup for tests
+- [_] Add TODO example
+- [_] Setup VSCode debug to match webpack-dev-server
+- [_] Setup a webpack common configuration and use webpack-merge
+- [_] Setup unit tests

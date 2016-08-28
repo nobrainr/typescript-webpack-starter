@@ -6,11 +6,14 @@
   "scripts": {
     "rimraf": "rimraf",
     "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server",
     "build": "npm run build:dev",
     "prebuild:dev": "npm run rimraf -- dist",
     "build:dev": "webpack --config config/webpack/webpack.dev.js --progress --profile --color --display-error-details --display-cached",
     "prebuild:prod": "npm run rimraf -- dist",
     "build:prod": "webpack --config config/webpack/webpack.prod.js  --progress --profile --color --display-error-details --display-cached --bail",
+    "server": "npm run server:dev",
+    "server:dev": "webpack-dev-server --config config/webpack/webpack.dev.js --port 3000 --host 0.0.0.0 --hot --progress --profile --watch --inline --content-base dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "typings i"
   },
