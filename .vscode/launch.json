@@ -1,14 +1,6 @@
 {
     "version": "0.2.0",
     "configurations": [
-         {
-            "name": "Launch with sourcemaps",
-            "type": "chrome",
-            "request": "launch",
-            "url": "http://localhost/mypage.html",
-            "webRoot": "${workspaceRoot}/dist",
-            "sourceMaps": true
-        },
         {
             "name": "Attach with sourcemaps",
             "type": "chrome",
@@ -17,6 +9,7 @@
             "port": 9222,
             "diagnosticLogging": true,
             "webRoot": "${workspaceRoot}/dist"
+
         }
     ]
 }
