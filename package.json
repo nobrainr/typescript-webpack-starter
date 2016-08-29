@@ -1,6 +1,6 @@
 {
   "name": "typescript-webpack-starter",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A damn simple starter for Typescript and Webpack",
   "main": "src/index.ts",
   "scripts": {
