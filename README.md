@@ -12,25 +12,24 @@
 ```bash
 git clone https://github.com/emyann/typescript-webpack-starter.git
 cd typescript-webpack-starter
+# Install the dependencies
+npm install
 ```
 
 ## Run
 Run a Webpack dev server 
 ```bash
-npm install
 npm run server
 ```
 
 ## Build Only
 Build a development release
 ```bash
-npm install
 npm run build
 ```
 
 Build a production release
 ```bash
-npm install
 npm run build:prod
 ```
 After build phase, 3 files are generated into the `dist` folder:
@@ -40,7 +39,7 @@ After build phase, 3 files are generated into the `dist` folder:
 
 ## TODO
 
-- [_] Add TODO example
-- [_] Setup VSCode debug to match webpack-dev-server
-- [_] Setup a webpack common configuration and use webpack-merge
-- [_] Setup unit tests
+- [ ] Add TODO example
+- [ ] Setup VSCode debug to match webpack-dev-server
+- [ ] Setup a webpack common configuration and use webpack-merge
+- [ ] Setup unit tests

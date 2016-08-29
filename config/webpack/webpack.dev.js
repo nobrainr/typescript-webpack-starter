@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 var config = {
     devtool: 'cheap-eval-source-map',
@@ -46,6 +47,7 @@ var config = {
             output: {comments: false},
             sourceMap: false
         }),
+         new DashboardPlugin()
     ],
     tslint: {
         emitErrors: false,
