@@ -43,4 +43,4 @@ After build phase, 3 files are generated into the `dist` folder:
 - [ ] Add TODO example
 - [ ] Setup VSCode debug to match webpack-dev-server
 - [ ] Setup a webpack common configuration and use webpack-merge
-- [ ] Setup unit tests
+- [ ] Setup unit tests with Jasmine / Karma
