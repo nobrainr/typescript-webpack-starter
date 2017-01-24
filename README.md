@@ -21,7 +21,7 @@ npm install
 ## Run
 Run a Webpack dev server 
 ```bash
-npm run server
+npm start
 ```
 
 ## Build Only
