@@ -2,9 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const nodeEnv = process.env.NODE_ENV || 'development';
+const isProd = nodeEnv === 'production';
 
 var config = {
-    devtool: 'cheap-eval-source-map',
+    devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
     context: path.resolve('./src'),
     entry: {
         app: './index.ts',
@@ -19,8 +21,8 @@ var config = {
         }
     },
     module: {
-        loaders: [
-            { test: /\.ts$/, exclude: ["node_modules"], loader: 'ts-loader' },
+        rules: [
+            { enforce: 'pre',test: /\.ts$/, exclude: ["node_modules"], loader: 'ts-loader' },
             { test: /\.html$/, loader: "html" },
             { test: /\.css$/, loaders: ['style', 'css'] }
         ]
@@ -40,16 +42,12 @@ var config = {
             filename: 'vendor.bundle.js'
         }),
         new webpack.optimize.UglifyJsPlugin({
-            compress: {warnings: false},
-            output: {comments: false},
+            compress: { warnings: false },
+            output: { comments: false },
             sourceMap: false
         }),
-         new DashboardPlugin()
-    ],
-    // tslint: {
-    //     emitErrors: false,
-    //     failOnHint: false
-    // },
+        new DashboardPlugin()
+    ]
 };
 
 module.exports = config;
