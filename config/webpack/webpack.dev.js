@@ -22,7 +22,7 @@ var config = {
     },
     module: {
         rules: [
-            { enforce: 'pre',test: /\.ts$/, exclude: ["node_modules"], loader: 'ts-loader' },
+            { enforce: 'pre', test: /\.ts$/, exclude: ["node_modules"], loader: 'ts-loader' },
             { test: /\.html$/, loader: "html" },
             { test: /\.css$/, loaders: ['style', 'css'] }
         ]
@@ -46,7 +46,15 @@ var config = {
             output: { comments: false },
             sourceMap: false
         }),
-        new DashboardPlugin()
+        new DashboardPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                tslint: {
+                    emitErrors: true,
+                    failOnHint: true
+                }
+            }
+        })
     ]
 };
 
