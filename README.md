@@ -8,9 +8,11 @@
 - [x] [Typescript 2](https://blogs.msdn.microsoft.com/typescript/2016/07/11/announcing-typescript-2-0-beta/)
 - [x] [Webpack Dashboard](https://github.com/FormidableLabs/webpack-dashboard)
 ![Imgur](http://i.imgur.com/pETTX85.png)
+
 # Getting started
 
 ## Clone Typescript Webpack Starter
+
 ```bash
 git clone https://github.com/emyann/typescript-webpack-starter.git
 cd typescript-webpack-starter
@@ -19,16 +21,24 @@ npm install
 ```
 
 ## Run
-Run a Webpack dev server 
+
+Start a Webpack dev server 
 ```bash
 npm start
 ```
+
+Start a Webpack server with the production configuration 
+```bash
+npm run server:prod
+```
+
 
 ## Build Only
 Build a development release
 ```bash
 npm run build
 ```
+
 
 Build a production release
 ```bash
