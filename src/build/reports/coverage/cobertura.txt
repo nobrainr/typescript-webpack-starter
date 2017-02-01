@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="5"  lines-covered="5"  line-rate="1"  branches-valid="0"  branches-covered="0"  branch-rate="1"  timestamp="1485970419635" complexity="0" version="0.1">
+<coverage lines-valid="5"  lines-covered="5"  line-rate="1"  branches-valid="0"  branches-covered="0"  branch-rate="1"  timestamp="1485970968339" complexity="0" version="0.1">
 <sources>
 	<source>C:\Users\Nj\Documents\Projects\webpack-starter</source>
 </sources>
