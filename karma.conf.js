@@ -43,6 +43,12 @@ module.exports = function (config) {
       suppressSkipped: true,  // do not print information about skipped tests 
       showSpecTiming: false // print the time elapsed for each spec 
     },
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -51,4 +57,8 @@ module.exports = function (config) {
     singleRun: false,
     concurrency: Infinity
   });
+
+  if (process.env.TRAVIS) {
+    config.browsers = ['Chrome_travis_ci'];
+  }
 };
