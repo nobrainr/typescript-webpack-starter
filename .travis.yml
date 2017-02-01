@@ -8,5 +8,4 @@ node_js:
   - '6.7'
 
 script:
-  - npm run build
-  - npm run build:prod
+  - npm run test
