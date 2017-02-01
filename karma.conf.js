@@ -9,15 +9,20 @@ module.exports = function (config) {
     frameworks: ['jasmine', 'karma-typescript'],
     files: [{ pattern: './**/*.spec.ts', watched: false }],
     preprocessors: {
-      'index.ts': ['webpack', 'karma-typescript'],
-      '**/*.spec.ts': ['webpack', 'karma-typescript']
+      'index.ts': ['webpack', 'karma-typescript', 'coverage'],
+      '**/*.spec.ts': ['webpack', 'karma-typescript', 'coverage']
     },
     webpack: webpackConf, // Pass your webpack.config.js file's content
     webpackMiddleware: {
       noInfo: true,
       stats: 'errors-only'
     },
-    reporters: ['progress', 'karma-typescript'],
+    reporters: ['progress', 'karma-typescript', 'coverage'],
+    // optionally, configure the reporter
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
