@@ -1,8 +1,5 @@
-describe('testgroup', ()=> {
-    it('case1', ()=> {
+describe('TypeScript WebPack Starter Tests', ()=> {
+    it('A good way to start building an awesome lib is by doing Unit Tests 👌🏽', ()=> {
         expect(true).toBe(true);
-    })
-    it('case2', ()=> {
-        expect(true).toBe(false);
     })
 })

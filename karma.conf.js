@@ -17,7 +17,7 @@ module.exports = function (config) {
       noInfo: true,
       stats: 'errors-only'
     },
-    reporters: ['progress', 'karma-typescript', 'kjhtml', 'spec', 'coverage'],
+    reporters: ['kjhtml', 'spec', 'coverage'],
     // optionally, configure the reporter
     coverageReporter: {
       // specify a common output directory
