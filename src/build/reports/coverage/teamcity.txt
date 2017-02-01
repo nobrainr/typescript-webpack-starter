@@ -1,0 +1,10 @@
+
+##teamcity[blockOpened name='Code Coverage Summary']
+##teamcity[buildStatisticValue key='CodeCoverageB' value='100']
+##teamcity[buildStatisticValue key='CodeCoverageAbsMCovered' value='5']
+##teamcity[buildStatisticValue key='CodeCoverageAbsMTotal' value='5']
+##teamcity[buildStatisticValue key='CodeCoverageM' value='100']
+##teamcity[buildStatisticValue key='CodeCoverageAbsLCovered' value='5']
+##teamcity[buildStatisticValue key='CodeCoverageAbsLTotal' value='5']
+##teamcity[buildStatisticValue key='CodeCoverageL' value='100']
+##teamcity[blockClosed name='Code Coverage Summary']
