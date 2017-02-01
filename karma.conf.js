@@ -17,7 +17,7 @@ module.exports = function (config) {
       noInfo: true,
       stats: 'errors-only'
     },
-    reporters: ['progress', 'karma-typescript', 'kjhtml', 'coverage'],
+    reporters: ['progress', 'karma-typescript', 'kjhtml', 'spec', 'coverage'],
     // optionally, configure the reporter
     coverageReporter: {
       // specify a common output directory
@@ -34,6 +34,14 @@ module.exports = function (config) {
         { type: 'text', subdir: '.', file: 'text.txt' },
         { type: 'text-summary', subdir: '.', file: 'text-summary.txt' },
       ]
+    },
+    specReporter: {
+      maxLogLines: 5,         // limit number of lines logged per test 
+      suppressErrorSummary: true,  // do not print error summary 
+      suppressFailed: false,  // do not print information about failed tests 
+      suppressPassed: false,  // do not print information about passed tests 
+      suppressSkipped: true,  // do not print information about skipped tests 
+      showSpecTiming: false // print the time elapsed for each spec 
     },
     port: 9876,
     colors: true,
