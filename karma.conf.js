@@ -6,18 +6,18 @@ delete webpackConf.entry
 module.exports = function (config) {
   config.set({
     basePath: './src',
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'karma-typescript'],
     files: [{ pattern: './**/*.spec.ts', watched: false }],
     preprocessors: {
-      'index.ts': ['webpack'],
-      '**/*.spec.ts': ['webpack']
+      'index.ts': ['webpack', 'karma-typescript'],
+      '**/*.spec.ts': ['webpack', 'karma-typescript']
     },
     webpack: webpackConf, // Pass your webpack.config.js file's content
     webpackMiddleware: {
       noInfo: true,
       stats: 'errors-only'
     },
-    reporters: ['progress'],
+    reporters: ['progress', 'karma-typescript'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
