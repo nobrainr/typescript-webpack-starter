@@ -6,3 +6,4 @@ typings/**/*
 ~$*
 *~
 node_modules/
+coverage/
