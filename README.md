@@ -26,6 +26,7 @@ Start a Webpack dev server
 ```bash
 npm start
 ```
+And go to this URL: `http://localhost:3000` - 🎉
 
 Start a Webpack server with the production configuration 
 ```bash
