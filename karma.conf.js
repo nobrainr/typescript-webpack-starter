@@ -3,8 +3,8 @@ module.exports = function (config) {
   config.set({
     basePath:'',
     frameworks: ['jasmine'],
-    files: [{ pattern: './spec-bundle.js', watched: false }],
-    preprocessors: { './spec-bundle.js': ['coverage', 'webpack', 'sourcemap'] },
+    files: [{ pattern: './tests/unit/spec-bundle.js', watched: false }],
+    preprocessors: { './tests/unit/spec-bundle.js': ['coverage', 'webpack', 'sourcemap'] },
     webpack: {
       module: webpackConf.module,
       resolve: webpackConf.resolve
