@@ -1,18 +1,14 @@
-// Karma configuration
-// Generated on Wed Feb 01 2017 12:12:42 GMT+0100 (Paris, Madrid)
 var webpackConf = require('./webpack.config.js');
-delete webpackConf.entry
-
 module.exports = function (config) {
   config.set({
-    basePath: './src',
-    frameworks: ['jasmine', 'karma-typescript'],
-    files: [{ pattern: './**/*.spec.ts', watched: false }],
-    preprocessors: {
-      'index.ts': ['webpack', 'karma-typescript', 'coverage'],
-      '**/*.spec.ts': ['webpack', 'karma-typescript', 'coverage']
+    basePath:'',
+    frameworks: ['jasmine'],
+    files: [{ pattern: './spec-bundle.js', watched: false }],
+    preprocessors: { './spec-bundle.js': ['coverage', 'webpack', 'sourcemap'] },
+    webpack: {
+      module: webpackConf.module,
+      resolve: webpackConf.resolve
     },
-    webpack: webpackConf, // Pass your webpack.config.js file's content
     webpackMiddleware: {
       noInfo: true,
       stats: 'errors-only'
@@ -21,7 +17,7 @@ module.exports = function (config) {
     // optionally, configure the reporter
     coverageReporter: {
       // specify a common output directory
-      dir: 'build/reports/coverage',
+      dir: './tests/build/reports/coverage',
       reporters: [
         // reporters not supporting the `file` property
         { type: 'html', subdir: 'report-html' },
@@ -54,12 +50,12 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false,
+    singleRun: true,
     concurrency: Infinity
   });
 
+
   if (process.env.TRAVIS) {
     config.browsers = ['Chrome_travis_ci'];
-    config.singleRun = true;
   }
 };
