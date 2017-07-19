@@ -1,6 +1,6 @@
 export default class Main {
     constructor() {
-        console.log('Typescript Webpack starter launched TUs');
+        console.log('Typescript Webpack starter launched');
     }
 }
 
