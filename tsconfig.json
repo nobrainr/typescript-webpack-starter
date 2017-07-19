@@ -1,9 +1,16 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "es6",
-    "moduleResolution": "node",
-    "sourceMap": true
+    "module": "commonjs",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
     "node_modules",
