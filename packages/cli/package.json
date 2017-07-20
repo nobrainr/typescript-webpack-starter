@@ -2,7 +2,6 @@
   "name": "create-ts-lib",
   "version": "0.0.1",
   "description": "Create your TypeScript module with no nuild configuration",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -31,6 +30,14 @@
     "url": "https://github.com/emyann/typescript-webpack-starter/issues"
   },
   "homepage": "https://github.com/emyann/typescript-webpack-starter#readme",
+  "files": [
+    "index.js",
+    "createTsLib.js"
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "create-ts-lib": "./index.js"
+  },
   "dependencies": {
     "chalk": "^2.0.1",
     "commander": "^2.11.0",
