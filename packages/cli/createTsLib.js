@@ -3,7 +3,6 @@
 const validateProjectName = require('validate-npm-package-name');
 const chalk = require('chalk');
 const commander = require('commander');
-const fs = require('fs-extra');
 const path = require('path');
 
 const packageJson = require('./package.json');
