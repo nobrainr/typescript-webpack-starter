@@ -84,7 +84,6 @@ function createApp(name) {
 }
 
 function run(root, appName, originalDirectory) {
-  console.log("debug creating library ", root, appName, originalDirectory);
   const templatePath = path.resolve(__dirname, "template");
   if (fs.existsSync(templatePath)) {
     fs.copySync(templatePath, root);
