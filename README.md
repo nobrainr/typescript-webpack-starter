@@ -91,5 +91,5 @@ Build a development release
 After build phase, 3 files are generated into the `dist` folder:
 - `app.bundle.js` - contains the core of the application. From the entry point `src/index.ts`
 - `vendor.bundle.js` - contains the vendor dependencies. From the entry point `src/vendor.ts` (lodash is added as an example)
-- `index.html` - html page references these files
+- `index.html` - html page referencing these files
 
