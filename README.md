@@ -3,6 +3,17 @@
 [![Build Status](https://travis-ci.org/emyann/typescript-webpack-starter.svg?branch=develop)](https://travis-ci.org/emyann/typescript-webpack-starter)
 >🚀 An ES6 and TypeScript Starter kit using webpack for bundling. Create your TypeScript module with neither build nor test configuration.
 
+
+## Built upon
+
+- [x] [Webpack 3](https://webpack.js.org/)
+- [x] [Typescript 2](https://blogs.msdn.microsoft.com/typescript/2016/07/11/announcing-typescript-2-0-beta/)
+- [x] [Webpack Dashboard](https://github.com/FormidableLabs/webpack-dashboard)
+- [x] [Karma](https://karma-runner.github.io/1.0/index.html), [Jasmine](https://jasmine.github.io/)
+
+![Imgur](http://i.imgur.com/pETTX85.png)
+
+
 ## Quick Overview
 
 ```sh
