@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "create-ts-lib app && cd app && npm start",
-    "test": "cd app && npm test"
+    "test": "cd app && npm test",
+    "test-cli": "create-ts-lib app && cd app && npm test"
   },
   "repository": {
     "type": "git",
