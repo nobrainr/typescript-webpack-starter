@@ -13,4 +13,4 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   
 script:
-  - npm test-cli
+  - npm run test-cli
