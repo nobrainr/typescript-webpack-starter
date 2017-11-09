@@ -4,15 +4,8 @@
   "description": "A damn simple starter for Typescript and Webpack",
   "main": "src/index.ts",
   "scripts": {
-    "start": "npm run server:dev",
-    "server": "npm run server:dev",
-    "server:dev": "webpack-dashboard -- webpack-dev-server --config ./packages/cli/template/webpack.config.js --inline --progress --watch --open",
-    "server:prod": "cross-env NODE_ENV=production webpack-dashboard -- webpack-dev-server --config ./packages/cli/template/webpack.config.js --port 3000 --host 0.0.0.0 --hot --inline --progress --profile --watch --open --content-base dist/",
-    "build": "npm run build:dev",
-    "build:dev": "webpack --config ./packages/cli/template/webpack.config.js --progress --profile --color --display-error-details --display-cached",
-    "build:prod": "cross-env NODE_ENV=production webpack --config ./packages/cli/template/webpack.config.js  --progress --profile --color --display-error-details --display-cached --bail",
-    "clean": "npm cache clear && rimraf -- dist",
-    "test": "karma start"
+    "start": "create-ts-lib app && cd app && npm start",
+    "test": "cd app && npm test"
   },
   "repository": {
     "type": "git",
@@ -21,11 +14,6 @@
   "author": "yrenaudin",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "3.19.0",
-    "husky": "^0.13.2",
-    "lerna": "2.0.0-rc.5",
-    "lerna-changelog": "^0.2.3",
-    "lint-staged": "^3.3.1",
-    "prettier": "^1.5.2"
+    "create-ts-lib": "^0.0.8"
   }
 }
