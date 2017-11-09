@@ -34,13 +34,6 @@ They are preconfigured so that you can focus on the code, but as a starter kit y
 
 Just create a project, and you’re good to go.
 
-### Built upon
-
-- [x] [Webpack 3](https://webpack.js.org/)
-- [x] [Typescript 2](https://blogs.msdn.microsoft.com/typescript/2016/07/11/announcing-typescript-2-0-beta/)
-- [x] [Webpack Dashboard](https://github.com/FormidableLabs/webpack-dashboard)
-![Imgur](http://i.imgur.com/pETTX85.png)
-
 ## Getting started
 
 ### Installation
@@ -103,4 +96,3 @@ After build phase, 3 files are generated into the `dist` folder:
 - `app.bundle.js` - contains the core of the application. From the entry point `src/index.ts`
 - `vendor.bundle.js` - contains the vendor dependencies. From the entry point `src/vendor.ts` (lodash is added as an example)
 - `index.html` - html page referencing these files
-
