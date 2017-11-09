@@ -1,7 +1,7 @@
 # Typescript Webpack Starter
 
 [![Build Status](https://travis-ci.org/emyann/typescript-webpack-starter.svg?branch=develop)](https://travis-ci.org/emyann/typescript-webpack-starter)
->🚀 A damn simple ES6 and TypeScript Starter kit using webpack for packaging. Create your TypeScript module with neither build nor test configuration.
+>🚀 An ES6 and TypeScript Starter kit using webpack for bundling. Create your TypeScript module with neither build nor test configuration.
 
 ## Quick Overview
 
@@ -19,7 +19,7 @@ When you’re ready to deploy to production, create a minified bundle with `npm 
 ### Get Started Immediately
 
 You **don’t** need to install or configure tools like Webpack or Babel.<br>
-They are preconfigured and hidden so that you can focus on the code.
+They are preconfigured so that you can focus on the code, but as a starter kit you still can modify them.
 
 Just create a project, and you’re good to go.
 
