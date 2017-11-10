@@ -11,7 +11,7 @@
 - [x] [Webpack Dashboard](https://github.com/FormidableLabs/webpack-dashboard)
 - [x] [Karma](https://karma-runner.github.io/1.0/index.html), [Jasmine](https://jasmine.github.io/)
 
-![Imgur](http://i.imgur.com/pETTX85.png)
+![Imgur](https://imgur.com/a/YWYjA)
 
 
 ## Quick Overview
