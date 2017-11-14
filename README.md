@@ -1,10 +1,9 @@
-# `create-ts-lib`
+# create-ts-lib [![Build Status](https://img.shields.io/travis/emyann/typescript-webpack-starter.svg)](https://travis-ci.org/emyann/typescript-webpack-starter) [![Npm Package](https://img.shields.io/npm/v/create-ts-lib.svg)](https://www.npmjs.com/package/create-ts-lib)
 
-[![Build Status](https://img.shields.io/travis/emyann/typescript-webpack-starter.svg)](https://travis-ci.org/emyann/typescript-webpack-starter)
-[![Npm Package](https://img.shields.io/npm/v/create-ts-lib.svg)](https://www.npmjs.com/package/create-ts-lib)
+> A yet another Typescript Webpack Starter
 
 ![Imgur](https://i.imgur.com/sj1kwB9.gif)
-> A yet another Typescript Webpack Starter
+
 
 ## Built upon
 
