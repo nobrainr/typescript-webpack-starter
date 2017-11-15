@@ -1,6 +1,6 @@
 {
   "name": "create-ts-lib",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Create your TypeScript module with no nuild configuration",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
