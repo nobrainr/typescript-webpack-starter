@@ -13,7 +13,7 @@
     "url": "https://github.com/emyann/typescript-webpack-starter"
   },
   "author": "yrenaudin",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "create-ts-lib": "^0.0.8"
   }
