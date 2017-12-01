@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run server:dev",
     "server": "npm run server:dev",
-    "server:dev": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --inline --progress --watch --open",
+    "server:dev": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --hot --inline --progress --watch --open",
     "server:prod": "cross-env NODE_ENV=production webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --port 3000 --host 0.0.0.0 --hot --inline --progress --profile --watch --open --content-base dist/",
     "build": "npm run build:dev",
     "build:dev": "webpack --config ./webpack.config.js --progress --profile --color --display-error-details --display-cached",
