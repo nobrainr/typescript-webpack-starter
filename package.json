@@ -15,6 +15,6 @@
   "author": "yrenaudin",
   "license": "MIT",
   "devDependencies": {
-    "create-ts-lib": "^0.0.8"
+    "lerna": "^2.8.0"
   }
 }
