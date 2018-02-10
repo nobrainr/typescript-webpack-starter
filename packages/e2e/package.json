@@ -1,0 +1,17 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "rimraf app",
+    "test": "create-ts-lib app && cd app && npm test"
+  },
+  "dependencies": {
+    "create-ts-lib": "^0.0.11",
+    "rimraf": "^2.6.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
