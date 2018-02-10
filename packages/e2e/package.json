@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "rimraf app",
-    "test": "create-ts-lib app && cd app && npm test"
+    "test": "create-ts-lib app && cd app && npm run build && npm run test"
   },
   "dependencies": {
     "create-ts-lib": "^0.0.11",
