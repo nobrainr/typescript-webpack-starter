@@ -95,3 +95,7 @@ After build phase, 3 files are generated into the `dist` folder:
 - `app.bundle.js` - contains the core of the application. From the entry point `src/index.ts`
 - `vendor.bundle.js` - contains the vendor dependencies. From the entry point `src/vendor.ts` (lodash is added as an example)
 - `index.html` - html page referencing these files
+
+## Development
+
+We'd love to have your helping hand on `create-ts-lib`! See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on what we're looking for and how to get started.
