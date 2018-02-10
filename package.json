@@ -4,9 +4,8 @@
   "description": "A damn simple starter for Typescript and Webpack",
   "main": "src/index.ts",
   "scripts": {
-    "start": "create-ts-lib app && cd app && npm start",
-    "test": "cd app && npm test",
-    "test-cli": "create-ts-lib app && cd app && npm test"
+    "build": "lerna bootstrap",
+    "test": "cd packages/e2e && npm test"
   },
   "repository": {
     "type": "git",
