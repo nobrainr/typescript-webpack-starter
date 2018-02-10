@@ -20,7 +20,7 @@ module.exports = function(config) {
       suppressFailed: false, // do not print information about failed tests
       suppressPassed: false, // do not print information about passed tests
       suppressSkipped: true, // do not print information about skipped tests
-      showSpecTiming: false // print the time elapsed for each spec
+      showSpecTiming: true // print the time elapsed for each spec
     },
     coverageIstanbulReporter: {
       reports: ['html', 'lcov', 'text-summary'],
