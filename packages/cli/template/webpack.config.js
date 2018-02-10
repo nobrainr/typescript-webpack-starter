@@ -2,8 +2,53 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin')
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const nodeEnv = process.env.NODE_ENV || 'development'
 const isProd = nodeEnv === 'production'
+
+const plugins = [
+  new UglifyJsPlugin({
+      parallel: true,
+      uglifyOptions: {
+        ie8: false,
+        ecma: 6,
+        warnings: true,
+        mangle: isProd, // debug false
+        output: {
+          comments: false,
+          beautify: !isProd,  // debug true
+        }
+      },
+      sourceMap: true
+  }),
+  new webpack.DefinePlugin({
+    'process.env': {
+      // eslint-disable-line quote-props
+      NODE_ENV: JSON.stringify(nodeEnv)
+    }
+  }),
+  new HtmlWebpackPlugin({
+    title: 'Typescript Webpack Starter',
+    template: '!!ejs-loader!src/index.html'
+  }),
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'vendor',
+    minChunks: Infinity,
+    filename: 'vendor.bundle.js'
+  }),
+  new webpack.LoaderOptionsPlugin({
+      options: {
+          tslint: {
+              emitErrors: true,
+              failOnHint: true
+          }
+      }
+  })
+];
+
+if (!isProd) {
+  plugins.push(new DashboardPlugin());
+}
 
 var config = {
   devtool: isProd ? 'hidden-source-map' : 'source-map',
@@ -43,37 +88,7 @@ var config = {
   resolve: {
     extensions: ['.ts', '.js']
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        // eslint-disable-line quote-props
-        NODE_ENV: JSON.stringify(nodeEnv)
-      }
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Typescript Webpack Starter',
-      template: '!!ejs-loader!src/index.html'
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity,
-      filename: 'vendor.bundle.js'
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false },
-      output: { comments: false },
-      sourceMap: true
-    }),
-    new DashboardPlugin(),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        tslint: {
-          emitErrors: true,
-          failOnHint: true
-        }
-      }
-    })
-  ],
+  plugins: plugins,
   devServer: {
     contentBase: path.join(__dirname, 'dist/'),
     compress: true,
