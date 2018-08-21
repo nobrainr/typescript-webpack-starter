@@ -46,5 +46,5 @@ tws-cli create -p default | minimal -n app
 ```
 
 ```sh
-tws-cli search --filter presets | minimal -n app
+tws-cli search --filter presets | actions <query>
 ```
