@@ -1,25 +1,24 @@
-const webpack = require('webpack')
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const nodeEnv = process.env.NODE_ENV || 'development'
-const isProd = nodeEnv === 'production'
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const nodeEnv = process.env.NODE_ENV || 'development';
+const isProd = nodeEnv === 'production';
 
 const plugins = [
   new UglifyJsPlugin({
-      parallel: true,
-      uglifyOptions: {
-        ie8: false,
-        ecma: 6,
-        warnings: true,
-        mangle: isProd, // debug false
-        output: {
-          comments: false,
-          beautify: !isProd,  // debug true
-        }
-      },
-      sourceMap: true
+    parallel: true,
+    uglifyOptions: {
+      ie8: false,
+      ecma: 6,
+      warnings: true,
+      mangle: isProd, // debug false
+      output: {
+        comments: false,
+        beautify: !isProd // debug true
+      }
+    },
+    sourceMap: true
   }),
   new webpack.DefinePlugin({
     'process.env': {
@@ -31,24 +30,15 @@ const plugins = [
     title: 'Typescript Webpack Starter',
     template: '!!ejs-loader!src/index.html'
   }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    minChunks: Infinity,
-    filename: 'vendor.bundle.js'
-  }),
   new webpack.LoaderOptionsPlugin({
-      options: {
-          tslint: {
-              emitErrors: true,
-              failOnHint: true
-          }
+    options: {
+      tslint: {
+        emitErrors: true,
+        failOnHint: true
       }
+    }
   })
 ];
-
-if (!isProd) {
-  plugins.push(new DashboardPlugin());
-}
 
 var config = {
   devtool: isProd ? 'hidden-source-map' : 'source-map',
@@ -62,7 +52,13 @@ var config = {
     filename: '[name].bundle.js',
     sourceMapFilename: '[name].bundle.map',
     devtoolModuleFilenameTemplate: function(info) {
-      return 'file:///' + info.absoluteResourcePath
+      return 'file:///' + info.absoluteResourcePath;
+    }
+  },
+  optimization: {
+    splitChunks: {
+      // include all types of chunks
+      chunks: 'all'
     }
   },
   module: {
@@ -95,6 +91,6 @@ var config = {
     port: 3000,
     hot: true
   }
-}
+};
 
-module.exports = config
+module.exports = config;
