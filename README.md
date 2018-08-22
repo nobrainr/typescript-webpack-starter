@@ -13,7 +13,7 @@ cd my-typescript-lib && npm start
 ### Build and Serve it
 
 - Browse http://localhost:3000/ to see your bootstrapped module.
-- Output bundle is created under `/dist` folder.
+- A bundle is created under `/dist` folder.
 - Create a minified bundle with `npm run build`.
 
 ## Features
@@ -36,7 +36,7 @@ cd my-typescript-lib && npm start
 Calling `create-ts-lib` with `my-typescript-lib` as an argument creates a directory `my-typescript-lib` inside the current directory.<br>
 Inside that directory, the initial file structure of the project is generated with all the devDependencies installed.
 
-```
+```sh
 my-typescript-lib
 ├── node_modules
 ├── src
@@ -70,13 +70,16 @@ Runs the unit tests using Karma as test runner and Jasmine as testing framework.
 
 ### `npm run build` or `npm run build:prod`
 
-Build a development release
+Creates a bundle into the `dist` folder:
 
-After build phase, 3 files are generated into the `dist` folder:
-
-- `app.bundle.js` - contains the core of the application. From the entry point `src/index.ts`
-- `vendor.bundle.js` - contains the vendor dependencies. From the entry point `src/vendor.ts` (lodash is added as an example)
-- `index.html` - html page referencing these files
+```sh
+dist
+├── MyLibrary.d.ts # - Example of a 'd.ts' declaration file
+├── app.bundle.js # - Main bundle of the application. name from webpack.config
+├── app.bundle.js.map # - Sourcemap
+├── index.d.ts
+└── index.html # - html page referencing app.bundle.js
+```
 
 ## Development
 
