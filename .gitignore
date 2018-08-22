@@ -9,3 +9,4 @@ app/
 node_modules/
 src/build/
 coverage/
+./.npmrc
