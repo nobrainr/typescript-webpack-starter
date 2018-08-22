@@ -3,6 +3,7 @@
   "version": "0.2.6",
   "description": "Create your TypeScript module with no nuild configuration",
   "scripts": {
+    "publish-cli": "semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -46,5 +47,9 @@
     "fs-extra": "^7.0.0",
     "semver": "^5.5.1",
     "validate-npm-package-name": "^3.0.0"
+  },
+  "devDependencies": {
+    "marked": "^0.4.0",
+    "semantic-release": "^15.9.9"
   }
 }

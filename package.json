@@ -6,7 +6,7 @@
   "scripts": {
     "build": "lerna bootstrap",
     "test": "cd packages/e2e && npm test",
-    "publish": "lerna publish patch --yes"
+    "publish": "lerna run publish-cli"
   },
   "repository": {
     "type": "git",
