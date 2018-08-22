@@ -3,7 +3,7 @@
   "version": "0.2.6",
   "description": "Create your TypeScript module with no nuild configuration",
   "scripts": {
-    "publish-cli": "semantic-release",
+    "publish-cli": "./node_modules/.bin/semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
