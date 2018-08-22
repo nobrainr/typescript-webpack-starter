@@ -1,4 +1,4 @@
-# create-ts-lib [![Build Status](https://img.shields.io/travis/emyann/typescript-webpack-starter.svg)](https://travis-ci.org/emyann/typescript-webpack-starter) [![Npm Package](https://img.shields.io/npm/v/create-ts-lib.svg)](https://www.npmjs.com/package/create-ts-lib)
+# create-ts-lib [![CircleCI](https://img.shields.io/circleci/project/github/nobrainr/typescript-webpack-starter.svg)](https://circleci.com/gh/nobrainr/workflows/typescript-webpack-starter/tree/master) [![Npm Package](https://img.shields.io/npm/v/create-ts-lib.svg)](https://www.npmjs.com/package/create-ts-lib)
 
 ## Quick Start
 
