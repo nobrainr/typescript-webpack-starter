@@ -17,15 +17,16 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run: npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
       # run tests!
       - run: npm run build
       - run:
           name: Run Tests
           command: npm test
+      - save_cache:
+          paths:
+            - node_modules
+            - packages/cli
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
 
   publish-job:
     docker:
