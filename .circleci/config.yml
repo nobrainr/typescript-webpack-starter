@@ -17,11 +17,8 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run: npm install
-      # run tests!
       - run: npm run build
-      - run:
-          name: Run Tests
-          command: npm test
+      - run: npm test
       - save_cache:
           paths:
             - node_modules
@@ -42,12 +39,8 @@ jobs:
       - run:
           name: Pre-Publish Script
           command: ./tools/publish.sh
-      # - run:
-      #     name: Authenticate with registry
-      #     command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/repo/.npmrc
-      - run:
-          name: Publish CLI
-          command: npm run publish
+      - run: npm run build
+      - run: npm run publish
 
 workflows:
   version: 2
