@@ -40,7 +40,7 @@ jobs:
             - v1-dependencies-
       - run:
           name: Pre-Publish Script
-          command: chmod +x ./tools/publish.sh && ./tools/publish.sh
+          command: ./tools/publish.sh
       - run:
           name: Publish CLI
           command: npm run publish
