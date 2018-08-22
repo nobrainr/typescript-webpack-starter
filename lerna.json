@@ -1,6 +1,9 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "command": {
+    "publish": {
+      "ignoreChanges": ["*.npmrc"]
+    }
+  },
+  "packages": ["packages/*"],
   "version": "0.2.6"
 }
