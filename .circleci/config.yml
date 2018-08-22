@@ -35,12 +35,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-source-{{ checksum "package-lock.json" }}
+            - v1-dependencies-{{ checksum "package-lock.json" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-source-
+            - v1-dependencies-
       - run:
           name: Publish CLI
-          command: echo 'Publish CLI'
+          command: npm run publish
 
 workflows:
   version: 2
