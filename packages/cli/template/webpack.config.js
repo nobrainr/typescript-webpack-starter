@@ -7,7 +7,6 @@ const isProd = nodeEnv === 'production';
 const plugins = [
   new webpack.DefinePlugin({
     'process.env': {
-      // eslint-disable-line quote-props
       NODE_ENV: JSON.stringify(nodeEnv)
     }
   }),
