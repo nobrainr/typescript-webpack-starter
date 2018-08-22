@@ -48,9 +48,9 @@ workflows:
     jobs:
       - test-job
       - publish-job:
-          # filters:
-          #   branches:
-          #     only:
-          #       - master
+          filters:
+            branches:
+              only:
+                - master
           requires:
             - test-job
