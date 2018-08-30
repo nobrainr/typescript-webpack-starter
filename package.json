@@ -6,7 +6,8 @@
   "scripts": {
     "build": "lerna bootstrap",
     "test": "cd packages/e2e && npm test",
-    "publish": "lerna run publish-cli"
+    "publish": "lerna run publish-cli",
+    "postinstall": "opencollective-postinstall"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,12 @@
   "license": "MIT",
   "devDependencies": {
     "lerna": "^3.1.2"
+  },
+  "dependencies": {
+    "opencollective": "^1.0.3"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-webpack-starter"
   }
 }
