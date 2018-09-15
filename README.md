@@ -1,68 +1,49 @@
-# create-ts-lib [![Build Status](https://img.shields.io/travis/emyann/typescript-webpack-starter.svg)](https://travis-ci.org/emyann/typescript-webpack-starter) [![Npm Package](https://img.shields.io/npm/v/create-ts-lib.svg)](https://www.npmjs.com/package/create-ts-lib)
+# create-ts-lib [![CircleCI](https://img.shields.io/circleci/project/github/nobrainr/typescript-webpack-starter.svg)](https://circleci.com/gh/nobrainr/workflows/typescript-webpack-starter/tree/master) [![Npm Package](https://img.shields.io/npm/v/create-ts-lib.svg)](https://www.npmjs.com/package/create-ts-lib)
 
-> A yet another Typescript Webpack Starter
+## Quick Start
 
-![Imgur](https://i.imgur.com/sj1kwB9.gif)
+You can execute the `create-ts-lib` CLI using [`npx`](https://github.com/zkat/npx) or by installing it globally with `npm i -g create-ts-lib`.
 
+```sh
+# Use NPX or npm install -g create-ts-lib to install it as a global package
+npx create-ts-lib my-typescript-lib
+cd my-typescript-lib && npm start
+```
 
-## Built upon
+### Build and Serve it
 
-- [x] [Webpack 3](https://webpack.js.org/)
-- [x] [Typescript 2](https://blogs.msdn.microsoft.com/typescript/2016/07/11/announcing-typescript-2-0-beta/)
-- [x] [Webpack Dashboard](https://github.com/FormidableLabs/webpack-dashboard)
+- Browse http://localhost:3000/ to see your bootstrapped module.
+- A bundle is created under `/dist` folder.
+- Create a minified bundle with `npm run build`.
+
+## Features
+
+You **don’t** need to install or configure tools like `Webpack`, `Typescript`, `Karma` or `Jasmine`.<br>
+They are preconfigured so that you can focus on the code, but as a starter kit you still can modify all the configuration files.
+
+- [x] (Application Type) [Typescript 3](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html)
+- [x] (Bundler) [Webpack 4](https://webpack.js.org/)
 - [x] [Karma](https://karma-runner.github.io/1.0/index.html), [Jasmine](https://jasmine.github.io/)
 
-
-## Quick Overview
-
-```sh
-npm install -g create-ts-lib
-
-create-ts-lib my-typescript-lib
-cd my-typescript-lib/
-npm start
-```
-
-Then open http://localhost:3000/ to see your bootstrapped module.
-When you’re ready to deploy to production, create a minified bundle with `npm run build`.
-
-### Get Started Immediately
-
-You **don’t** need to install or configure tools like Webpack or Babel.<br>
-They are preconfigured so that you can focus on the code, but as a starter kit you still can modify them.
-
-Just create a project, and you’re good to go.
-
-## Getting started
-
-### Installation
-
-Install it once globally:
+### Create a Typescript project
 
 ```sh
-npm install -g create-ts-lib
+# Use NPX or npm install -g create-ts-lib to install it as a global package
+npx create-ts-lib my-typescript-lib
+cd my-typescript-lib && npm start
 ```
 
-### Creating a TypeScript module
-
-To create a new module, run:
+Calling `create-ts-lib` with `my-typescript-lib` as an argument creates a directory `my-typescript-lib` inside the current directory.<br>
+Inside that directory, the initial file structure of the project is generated with all the devDependencies installed.
 
 ```sh
-create-ts-lib my-ts-module
-cd my-ts-module
-```
-
-It will create a directory called `my-ts-module` inside the current folder.<br>
-Inside that directory, it will generate the initial project structure and install the transitive dependencies:
-
-```
-my-ts-module
+my-typescript-lib
 ├── node_modules
 ├── src
 │   └── index.html
-│   └── index.spec.ts
 │   └── index.ts
-│   └── vendor.js
+│   └── MyLibrary.ts
+│   └── MyLibrary.spec.ts
 ├── tests
 │    └── unit
 │        └── spec-bundle.js
@@ -76,8 +57,7 @@ my-ts-module
 └── webpack.config.js
 ```
 
-No configuration or complicated folder structures, just the files you need to build your app.<br>
-Once the installation is done, you can run some commands inside the project folder:
+No configuration or complicated folder structures, just the files you need to start your app / package / module.<br>
 
 ### `npm start` or `npm run server:prod`
 
@@ -89,12 +69,17 @@ Open [http://localhost:3000](http://localhost:3000) 🎉 to view it in the brows
 Runs the unit tests using Karma as test runner and Jasmine as testing framework.
 
 ### `npm run build` or `npm run build:prod`
-Build a development release
 
-After build phase, 3 files are generated into the `dist` folder:
-- `app.bundle.js` - contains the core of the application. From the entry point `src/index.ts`
-- `vendor.bundle.js` - contains the vendor dependencies. From the entry point `src/vendor.ts` (lodash is added as an example)
-- `index.html` - html page referencing these files
+Creates a bundle into the `dist` folder:
+
+```sh
+dist
+├── MyLibrary.d.ts # - Example of a 'd.ts' declaration file
+├── app.bundle.js # - Main bundle of the application. name from webpack.config
+├── app.bundle.js.map # - Sourcemap
+├── index.d.ts
+└── index.html # - html page referencing app.bundle.js
+```
 
 ## Development
 

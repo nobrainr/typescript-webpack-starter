@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "lerna bootstrap",
-    "test": "cd packages/e2e && npm test"
+    "test": "cd packages/e2e && npm test",
+    "publish": "lerna run publish-cli"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,6 @@
   "author": "yrenaudin",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "^2.8.0"
+    "lerna": "^3.1.2"
   }
 }

@@ -1,4 +1,4 @@
-var webpackConf = require('./webpack.config.js')
+var webpackConf = require('./webpack.config.js');
 module.exports = function(config) {
   config.set({
     basePath: '',
@@ -43,9 +43,5 @@ module.exports = function(config) {
     browsers: ['Chrome'],
     singleRun: true,
     concurrency: Infinity
-  })
-
-  if (process.env.TRAVIS) {
-    config.browsers = ['Chrome_travis_ci']
-  }
-}
+  });
+};

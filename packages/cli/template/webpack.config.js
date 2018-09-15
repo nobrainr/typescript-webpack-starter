@@ -1,29 +1,12 @@
-const webpack = require('webpack')
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const nodeEnv = process.env.NODE_ENV || 'development'
-const isProd = nodeEnv === 'production'
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const nodeEnv = process.env.NODE_ENV || 'development';
+const isProd = nodeEnv === 'production';
 
 const plugins = [
-  new UglifyJsPlugin({
-      parallel: true,
-      uglifyOptions: {
-        ie8: false,
-        ecma: 6,
-        warnings: true,
-        mangle: isProd, // debug false
-        output: {
-          comments: false,
-          beautify: !isProd,  // debug true
-        }
-      },
-      sourceMap: true
-  }),
   new webpack.DefinePlugin({
     'process.env': {
-      // eslint-disable-line quote-props
       NODE_ENV: JSON.stringify(nodeEnv)
     }
   }),
@@ -31,39 +14,25 @@ const plugins = [
     title: 'Typescript Webpack Starter',
     template: '!!ejs-loader!src/index.html'
   }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    minChunks: Infinity,
-    filename: 'vendor.bundle.js'
-  }),
   new webpack.LoaderOptionsPlugin({
-      options: {
-          tslint: {
-              emitErrors: true,
-              failOnHint: true
-          }
+    options: {
+      tslint: {
+        emitErrors: true,
+        failOnHint: true
       }
+    }
   })
 ];
-
-if (!isProd) {
-  plugins.push(new DashboardPlugin());
-}
 
 var config = {
   devtool: isProd ? 'hidden-source-map' : 'source-map',
   context: path.resolve('./src'),
   entry: {
-    app: './index.ts',
-    vendor: './vendor.ts'
+    app: './index.ts'
   },
   output: {
     path: path.resolve('./dist'),
-    filename: '[name].bundle.js',
-    sourceMapFilename: '[name].bundle.map',
-    devtoolModuleFilenameTemplate: function(info) {
-      return 'file:///' + info.absoluteResourcePath
-    }
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -73,17 +42,19 @@ var config = {
         exclude: ['node_modules'],
         use: ['awesome-typescript-loader', 'source-map-loader']
       },
-      {
-        test: /\.(js|ts)$/,
-        loader: 'istanbul-instrumenter-loader',
-        exclude: [/\/node_modules\//],
-        query: {
-          esModules: true
-        }
-      },
+      !isProd
+        ? {
+            test: /\.(js|ts)$/,
+            loader: 'istanbul-instrumenter-loader',
+            exclude: [/\/node_modules\//],
+            query: {
+              esModules: true
+            }
+          }
+        : null,
       { test: /\.html$/, loader: 'html-loader' },
       { test: /\.css$/, loaders: ['style-loader', 'css-loader'] }
-    ]
+    ].filter(Boolean)
   },
   resolve: {
     extensions: ['.ts', '.js']
@@ -95,6 +66,6 @@ var config = {
     port: 3000,
     hot: true
   }
-}
+};
 
-module.exports = config
+module.exports = config;
