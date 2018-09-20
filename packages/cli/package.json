@@ -4,7 +4,9 @@
   "description": "Create your TypeScript module with no nuild configuration",
   "scripts": {
     "publish-cli": "semantic-release",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "opencollective-postinstall"
+    
   },
   "repository": {
     "type": "git",
@@ -46,10 +48,15 @@
     "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.0",
     "semver": "^5.5.1",
-    "validate-npm-package-name": "^3.0.0"
+    "validate-npm-package-name": "^3.0.0",
+    "opencollective-postinstall": "^2.0.0"
   },
   "devDependencies": {
     "marked": "^0.4.0",
     "semantic-release": "^15.9.9"
-  }
+  },
+  "collective": {	  
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-webpack-starter"
+  }	  
 }
