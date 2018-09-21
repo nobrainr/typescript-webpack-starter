@@ -1,8 +1,6 @@
 # create-ts-lib [![Backers on Open Collective](https://opencollective.com/typescript-webpack-starter/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/typescript-webpack-starter/sponsors/badge.svg)](#sponsors) [![CircleCI](https://img.shields.io/circleci/project/github/nobrainr/typescript-webpack-starter.svg)](https://circleci.com/gh/nobrainr/workflows/typescript-webpack-starter/tree/master) [![Npm Package](https://img.shields.io/npm/v/create-ts-lib.svg)](https://www.npmjs.com/package/create-ts-lib)
 
-<video poster="poster.jpg" width="618" height="347" controls preload> 
-    <source src="https://youtu.be/TEUvqh9EsB4" media="only screen and (min-device-width: 568px)"></source> 
-</video>
+![](https://s3.us-east-2.amazonaws.com/typescript-webpack-starter/create-ts-lib.gif)
 
 ## Quick Start
 
