@@ -1,5 +1,7 @@
 # create-ts-lib [![Backers on Open Collective](https://opencollective.com/typescript-webpack-starter/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/typescript-webpack-starter/sponsors/badge.svg)](#sponsors) [![CircleCI](https://img.shields.io/circleci/project/github/nobrainr/typescript-webpack-starter.svg)](https://circleci.com/gh/nobrainr/workflows/typescript-webpack-starter/tree/master) [![Npm Package](https://img.shields.io/npm/v/create-ts-lib.svg)](https://www.npmjs.com/package/create-ts-lib)
 
+![](https://s3.us-east-2.amazonaws.com/typescript-webpack-starter/create-ts-lib.gif)
+
 ## Quick Start
 
 You can execute the `create-ts-lib` CLI using [`npx`](https://github.com/zkat/npx) or by installing it globally with `npm i -g create-ts-lib`.
@@ -90,13 +92,11 @@ We'd love to have your helping hand on `create-ts-lib`! See [CONTRIBUTING.md](CO
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
 <a href="graphs/contributors"><img src="https://opencollective.com/typescript-webpack-starter/contributors.svg?width=890&button=false" /></a>
 
-
 ## Backers
 
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/typescript-webpack-starter#backer)]
 
 <a href="https://opencollective.com/typescript-webpack-starter#backers" target="_blank"><img src="https://opencollective.com/typescript-webpack-starter/backers.svg?width=890"></a>
-
 
 ## Sponsors
 
@@ -112,5 +112,3 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/typescript-webpack-starter/sponsor/7/website" target="_blank"><img src="https://opencollective.com/typescript-webpack-starter/sponsor/7/avatar.svg"></a>
 <a href="https://opencollective.com/typescript-webpack-starter/sponsor/8/website" target="_blank"><img src="https://opencollective.com/typescript-webpack-starter/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/typescript-webpack-starter/sponsor/9/website" target="_blank"><img src="https://opencollective.com/typescript-webpack-starter/sponsor/9/avatar.svg"></a>
-
-
