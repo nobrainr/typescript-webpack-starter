@@ -31,7 +31,7 @@ They are preconfigured so that you can focus on the code, but as a starter kit y
 
 ```sh
 # Use NPX or npm install -g create-ts-lib to install it as a global package
-npx create-ts-lib my-typescript-lib
+npx create-ts-lib@latest my-typescript-lib
 cd my-typescript-lib && npm start
 ```
 
@@ -55,7 +55,6 @@ my-typescript-lib
 ├── karma.conf.js
 ├── tsconfig.json
 ├── tslint.json
-├── typings.json
 └── webpack.config.js
 ```
 
