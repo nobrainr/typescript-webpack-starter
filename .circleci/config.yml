@@ -22,7 +22,6 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-            - packages/cli
           key: v1-dependencies-{{ checksum "package-lock.json" }}
   test-job-10:
     docker:
@@ -42,7 +41,6 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-            - packages/cli
           key: v1-dependencies-{{ checksum "package-lock.json" }}
 
   publish-job:
