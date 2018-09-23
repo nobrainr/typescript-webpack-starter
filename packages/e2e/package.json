@@ -9,7 +9,7 @@
     "test": "create-ts-lib app && cd app && npm run build && npm run test"
   },
   "dependencies": {
-    "create-ts-lib": "^0.2.6",
+    "create-ts-lib": "^0.3.1",
     "rimraf": "^2.6.2"
   },
   "keywords": [],
