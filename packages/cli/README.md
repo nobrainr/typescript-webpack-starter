@@ -8,7 +8,7 @@ You can execute the `create-ts-lib` CLI using [`npx`](https://github.com/zkat/np
 
 ```sh
 # Use NPX or npm install -g create-ts-lib to install it as a global package
-npx create-ts-lib my-typescript-lib
+npx create-ts-lib@latest my-typescript-lib
 cd my-typescript-lib && npm start
 ```
 
