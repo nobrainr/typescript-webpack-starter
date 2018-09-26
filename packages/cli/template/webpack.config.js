@@ -39,7 +39,7 @@ var config = {
       {
         enforce: 'pre',
         test: /\.tsx?$/,
-        exclude: ['node_modules'],
+        exclude: [/\/node_modules\//],
         use: ['awesome-typescript-loader', 'source-map-loader']
       },
       !isProd
