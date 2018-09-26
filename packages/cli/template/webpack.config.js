@@ -38,7 +38,7 @@ var config = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.ts?$/,
+        test: /\.tsx?$/,
         exclude: ['node_modules'],
         use: ['awesome-typescript-loader', 'source-map-loader']
       },
