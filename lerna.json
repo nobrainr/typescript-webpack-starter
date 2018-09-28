@@ -4,6 +4,6 @@
       "ignoreChanges": ["*.npmrc"]
     }
   },
-  "packages": ["packages/*"],
+  "packages": ["packages/cli", "packages/e2e", "packages/templates/*"],
   "version": "0.3.1"
 }
