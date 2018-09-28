@@ -43,6 +43,10 @@
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nobrainr/typescript-webpack-starter.git"
+  },
   "directories": {
     "test": "tests"
   },
