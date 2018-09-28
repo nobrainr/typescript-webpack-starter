@@ -23,6 +23,25 @@ jobs:
       - run: npm run build
       - run: npm test
 
+  test-preset-node8:
+    docker:
+      - image: circleci/node:10-browsers
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+      - run: npm test:preset
+  test-preset-node10:
+    docker:
+      - image: circleci/node:10-browsers
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+      - run: npm test:preset
+
   publish-job:
     docker:
       - image: circleci/node:10
@@ -41,7 +60,10 @@ workflows:
   test:
     jobs:
       - test-job-8
+      - test-preset-node8
       - test-job-10
+      - test-preset-node10
+
       - publish-job:
           filters:
             branches:
@@ -49,4 +71,6 @@ workflows:
                 - master
           requires:
             - test-job-8
+            - test-preset-node8
             - test-job-10
+            - test-preset-node10
