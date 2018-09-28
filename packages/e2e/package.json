@@ -16,6 +16,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "create-ts-lib": "0.3.1"
+    "create-ts-lib": "0.4.0"
   }
 }
