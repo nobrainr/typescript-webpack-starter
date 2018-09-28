@@ -1,5 +1,5 @@
 {
-  "name": "name-placeholder",
+  "name": "@nobrainr/typescript_universal-webpack-karma_jasmine",
   "version": "0.0.1",
   "main": "src/index.ts",
   "scripts": {
@@ -43,5 +43,10 @@
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "directories": {
+    "test": "tests"
+  },
+  "author": "",
+  "description": ""
 }
