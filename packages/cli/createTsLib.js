@@ -77,22 +77,42 @@ function createApp(name) {
   run(root, appName, originalDirectory);
 }
 
-function run(root, appName, originalDirectory) {
-  const templatePath = path.resolve(__dirname, 'template');
-  if (fs.existsSync(templatePath)) {
-    fs.copySync(templatePath, root);
-    let packageJsonPath = path.join(root, 'package.json');
-    let packageJson = require(packageJsonPath);
-    packageJson.name = appName;
-    packageJson.version = '0.0.1';
-
-    fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
-    console.log('Installing packages. This might take a couple of minutes.');
-    return install();
-  } else {
-    console.error(`Could not locate supplied template: ${chalk.green(templatePath)}`);
-    return;
+async function run(root, appName, originalDirectory) {
+  function installTemplate(templateName) {
+    try {
+      console.log('loading template', templateName);
+      const res = require('child_process')
+        .execSync(`npm install ${templateName}`)
+        .toString()
+        .trim();
+      console.log(`${templateName} loaded successfully`);
+    } catch (e) {
+      console.log(`${templateName} err`);
+    }
   }
+  const templateName = '@nobrainr/typescript_universal-webpack-karma_jasmine';
+  const templatePath = path.resolve(__dirname, 'node_modules', templateName);
+  if (!fs.existsSync(templatePath)) {
+    try {
+      installTemplate(templateName);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  fs.copySync(templatePath, root, {
+    dereference: true,
+    filter: function(path) {
+      return path.indexOf(`${templateName}/node_modules`) === -1;
+    }
+  });
+  let packageJsonPath = path.join(root, 'package.json');
+  let packageJson = require(packageJsonPath);
+  packageJson.name = appName;
+  packageJson.version = '0.0.1';
+
+  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  console.log('Installing packages. This might take a couple of minutes.');
+  return await install();
 }
 
 function install() {

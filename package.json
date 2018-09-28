@@ -1,11 +1,12 @@
 {
   "name": "typescript-webpack-starter",
   "version": "0.2.0",
-  "description": "A damn simple starter for Typescript and Webpack",
+  "description": "",
+  "private": true,
   "main": "src/index.ts",
   "scripts": {
     "build": "lerna bootstrap",
-    "update-cli-in-e2e": "lerna add create-ts-lib packages/e2e",
+    "update-cli-in-e2e": "lerna add create-ts-lib --scope=e2e --dev --exact",
     "test": "cd packages/e2e && npm test",
     "publish": "lerna run publish-cli"
   },
