@@ -1,6 +1,6 @@
 {
   "name": "e2e",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "description": "",
   "private": true,
   "main": "index.js",
@@ -9,7 +9,7 @@
     "test": "create-ts-lib app && cd app && npm run build && npm run test"
   },
   "dependencies": {
-    "create-ts-lib": "^0.3.1",
+    "create-ts-lib": "^0.4.0",
     "rimraf": "^2.6.2"
   },
   "keywords": [],

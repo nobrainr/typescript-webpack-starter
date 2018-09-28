@@ -1,6 +1,6 @@
 {
   "name": "create-ts-lib",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Create your TypeScript module with no nuild configuration",
   "scripts": {
     "start": "node ./index.js",
@@ -53,7 +53,7 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
-    "@nobrainr/typescript_universal-webpack-karma_jasmine": "0.0.1",
+    "@nobrainr/typescript_universal-webpack-karma_jasmine": "^1.0.0",
     "marked": "^0.4.0",
     "semantic-release": "^15.9.9"
   },
