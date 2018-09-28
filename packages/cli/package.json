@@ -3,6 +3,7 @@
   "version": "0.3.1",
   "description": "Create your TypeScript module with no nuild configuration",
   "scripts": {
+    "start": "node ./index.js",
     "publish-cli": "semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "opencollective-postinstall"
@@ -46,11 +47,12 @@
     "commander": "^2.17.1",
     "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.0",
+    "opencollective-postinstall": "^2.0.0",
     "semver": "^5.5.1",
-    "validate-npm-package-name": "^3.0.0",
-    "opencollective-postinstall": "^2.0.0"
+    "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
+    "@nobrainr/typescript_universal-webpack-karma_jasmine": "^0.0.1",
     "marked": "^0.4.0",
     "semantic-release": "^15.9.9"
   },
