@@ -99,7 +99,12 @@ async function run(root, appName, originalDirectory) {
       console.log(e);
     }
   }
-  fs.copySync(templatePath, root, { dereference: true });
+  fs.copySync(templatePath, root, {
+    dereference: true,
+    filter: function(path) {
+      return path.indexOf(`${templateName}/node_modules`) === -1;
+    }
+  });
   let packageJsonPath = path.join(root, 'package.json');
   let packageJson = require(packageJsonPath);
   packageJson.name = appName;
