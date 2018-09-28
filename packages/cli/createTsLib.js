@@ -12,8 +12,20 @@ const packageJson = require('./package.json');
 
 let projectName;
 
+const PRESETS = {
+  default: ['typescript_universal', 'webpack', 'karma_jasmine'],
+  server: ['typescript_server']
+};
+
 const program = new commander.Command(packageJson.name)
   .version(packageJson.version)
+  .option(
+    '-p, --preset [name]',
+    `[ default | server ]
+                  * default: Typescript, Webpack, Karma, Jasmine
+                  * server: Typescript, ts-node, nodemon`,
+    'default'
+  )
   .arguments('<project-directory>')
   .usage(`${chalk.green('<project-directory>')}`)
   .action(name => {
@@ -36,9 +48,9 @@ if (typeof projectName === 'undefined') {
   process.exit(1);
 }
 
-createApp(projectName);
+createApp(projectName, program.preset);
 
-function createApp(name) {
+function createApp(name, preset) {
   const root = path.resolve(name);
   const appName = path.basename(root);
 
@@ -51,7 +63,6 @@ function createApp(name) {
   console.log(`Creating a new TypeScript library in ${chalk.green(root)}.`);
   console.log();
 
-  const originalDirectory = process.cwd();
   process.chdir(root);
 
   if (!semver.satisfies(process.version, '>=6.0.0')) {
@@ -74,15 +85,15 @@ function createApp(name) {
       );
     }
   }
-  run(root, appName, originalDirectory);
+  run(root, appName, preset);
 }
 
-async function run(root, appName, originalDirectory) {
+async function run(root, appName, preset) {
   function installTemplate(templateName) {
     try {
       console.log(`loading ${templateName} template in ${path.resolve(__dirname)}`);
       const res = require('child_process')
-        .execSync(`npm install ${templateName}`, { cwd: path.resolve(__dirname) })
+        .execSync(`npm install -D ${templateName}`, { cwd: path.resolve(__dirname) })
         .toString()
         .trim();
       console.log(`${templateName} loaded successfully`);
@@ -90,7 +101,7 @@ async function run(root, appName, originalDirectory) {
       console.log(`${templateName} err`);
     }
   }
-  const templateName = '@nobrainr/typescript_universal-webpack-karma_jasmine';
+  const templateName = getTemplateNameFromPreset(PRESETS[preset]);
   const templatePath = path.resolve(__dirname, 'node_modules', templateName);
   if (!fs.existsSync(templatePath)) {
     try {
@@ -113,6 +124,10 @@ async function run(root, appName, originalDirectory) {
   fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
   console.log('Installing packages. This might take a couple of minutes.');
   return await install();
+
+  function getTemplateNameFromPreset(preset) {
+    return `@nobrainr/${preset.join('-')}`;
+  }
 }
 
 function install() {
