@@ -31,7 +31,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run build
-      - run: npm run test:preset
+      - run: cd packages/e2e && npm run test:preset
   test-preset-node10:
     docker:
       - image: circleci/node:10-browsers
@@ -40,7 +40,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run build
-      - run: npm run test:preset
+      - run: cd packages/e2e && npm run test:preset
 
   publish-job:
     docker:
