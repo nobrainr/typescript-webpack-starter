@@ -80,9 +80,9 @@ function createApp(name) {
 async function run(root, appName, originalDirectory) {
   function installTemplate(templateName) {
     try {
-      console.log('loading template', templateName);
+      console.log(`loading ${templateName} template in ${path.resolve(__dirname)}`);
       const res = require('child_process')
-        .execSync(`npm install ${templateName}`)
+        .execSync(`npm install ${templateName}`, { cwd: path.resolve(__dirname) })
         .toString()
         .trim();
       console.log(`${templateName} loaded successfully`);
