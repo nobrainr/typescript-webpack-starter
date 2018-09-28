@@ -1,7 +1,7 @@
 {
   "name": "create-ts-lib",
   "version": "0.4.0",
-  "description": "Create your TypeScript module with no nuild configuration",
+  "description": "Create your TypeScript module with no build configuration",
   "scripts": {
     "start": "node ./index.js",
     "link-templates": "lerna add @nobrainr/typescript_universal-webpack-karma_jasmine --scope=create-ts-lib --dev --exact",
