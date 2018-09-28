@@ -1,7 +1,8 @@
 {
   "name": "typescript-webpack-starter",
   "version": "0.2.0",
-  "description": "A damn simple starter for Typescript and Webpack",
+  "description": "",
+  "private": true,
   "main": "src/index.ts",
   "scripts": {
     "build": "lerna bootstrap",
