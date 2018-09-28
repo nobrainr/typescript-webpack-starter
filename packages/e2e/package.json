@@ -5,8 +5,9 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "pretest": "rimraf app",
-    "test": "create-ts-lib app && cd app && npm run build && npm run test"
+    "clean": "rimraf app",
+    "test": "npm run clean && create-ts-lib app && cd app && npm run build && npm run test",
+    "test:preset": "npm run clean && create-ts-lib --preset server app && cd app && npm run build && ls -l ./dist"
   },
   "dependencies": {
     "create-ts-lib": "^0.4.0",
@@ -16,6 +17,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "create-ts-lib": "0.4.0"
+    "create-ts-lib": "^0.4.0"
   }
 }

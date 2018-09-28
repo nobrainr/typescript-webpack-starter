@@ -41,6 +41,7 @@
     "create-ts-lib": "./index.js"
   },
   "dependencies": {
+    "@nobrainr/typescript_server": "^1.0.0",
     "chalk": "^2.4.1",
     "commander": "^2.17.1",
     "cross-spawn": "^6.0.5",

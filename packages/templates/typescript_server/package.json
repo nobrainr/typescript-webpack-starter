@@ -1,0 +1,28 @@
+{
+  "name": "@nobrainr/typescript_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "ts-node ./src/index.ts",
+    "prod": "npm run build && node ./dist/index.js",
+    "server": "nodemon ./src/index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nobrainr/typescript-webpack-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nobrainr/typescript-webpack-starter/issues"
+  },
+  "homepage": "https://github.com/nobrainr/typescript-webpack-starter#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
+  }
+}
