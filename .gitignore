@@ -10,4 +10,5 @@ node_modules/
 src/build/
 coverage/
 *-debug.log
+**.DS_Store
 
