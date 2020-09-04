@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@nobrainr/typescript_universal-webpack-karma_jasmine": "^1.0.0",
-    "marked": "^0.4.0",
+    "marked": "^0.7.0",
     "semantic-release": "^15.9.9"
   },
   "collective": {
